@@ -575,3 +575,12 @@ var Webcam = {
 };
 
 Webcam.init();
+
+if (typeof module != 'undefined' && module.exports) {
+	module.exports = Webcam;
+} else if (typeof define == 'function' && define.amd) {
+ 	define(Webcam);
+} else {
+	window.Webcam = Webcam;
+}
+
